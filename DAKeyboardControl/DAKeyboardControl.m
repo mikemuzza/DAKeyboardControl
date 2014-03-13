@@ -152,6 +152,10 @@ static char UIViewIsPanning;
     // Unregister any gesture recognizer
     [self removeGestureRecognizer:self.keyboardPanRecognizer];
     
+    // Clean up control over active view
+    self.keyboardActiveView.hidden = NO;
+    self.keyboardActiveView.userInteractionEnabled = YES;
+    
     // Release a few properties
     self.keyboardDidMoveBlock = nil;
     self.keyboardActiveInput = nil;
